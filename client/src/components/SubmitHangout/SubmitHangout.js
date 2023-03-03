@@ -25,14 +25,14 @@ const SubmitHangout = () => {
         description: description,
         organizer: organizer,
         contact: contact
-      });
+      })
       if (res.status === 201) {
         setTitle("");
         setDescription("");
         setOrganizer("");
         setContact("");
         setMessage("Hangout pitched successfully! This one's gonna be fun!");
-        navigate('/');
+        navigate('/hangouts');
       } else {
         setMessage("Some error occured");
       }

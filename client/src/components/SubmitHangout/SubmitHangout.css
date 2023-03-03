@@ -1,6 +1,10 @@
 .form-group, .btn {
     margin: 1%;
 }
+.form-group {
+    margin-top: 1.75%;
+    margin-bottom: 1.75%;
+}
 .message {
     font-size: 1.2em;
     text-align: center;

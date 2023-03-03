@@ -1,0 +1,17 @@
+/* .homepage { */
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+ .gallery {
+    display: flex;
+    width: 98%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.galleryItem {
+    padding-bottom: 1%;
+    filter: drop-shadow(0 0 0.1rem black);
+    margin: 2%;
+ }    

@@ -1,0 +1,31 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.section {
+    font-weight: 700;
+    font-size: larger;
+    text-shadow: 0px 0.2px black;
+}
+.heroImg {
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+    margin-left: 20%;
+}
+figcaption {
+    margin-left: 20%;
+}
+#hero {
+    padding-bottom: 4%;
+    padding-top: 4%;
+}
+#origin, #solution {
+    padding-bottom: 4%;
+}
+.math104 {
+    margin-top: 2%;
+}
+.headerText {
+    text-shadow: 0px 1px black;
+    
+}

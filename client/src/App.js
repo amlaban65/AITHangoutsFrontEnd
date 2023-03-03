@@ -9,6 +9,7 @@ import Homepage from './components/Homepage/Homepage';
 import Team from './components/Team/Team';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SubmitHangout from './components/SubmitHangout/SubmitHangout';
+import Landing from './components/Landing/Landing';
 
 function App() {
   const navigate = useNavigate();
@@ -21,16 +22,18 @@ function App() {
         crossorigin="anonymous"
       />
       <Navbar bg="primary" variant="dark">
-          <Navbar.Brand onClick={() => navigate('/')} style={{marginLeft: '2%'}}>AIT Hangouts</Navbar.Brand>
+          <Navbar.Brand onClick={() => navigate('/')} style={{marginLeft: '2%', fontWeight: '800'}}>AIT Hangouts</Navbar.Brand>
           <Container>
           <Nav className="me-auto">
-            <Nav.Link onClick={() => navigate('/pitch')}>Pitch a hangout!</Nav.Link>
+          <Nav.Link onClick={() => navigate('/hangouts')}>Hangouts</Nav.Link>
+            <Nav.Link onClick={() => navigate('/pitch')}>Pitch a hangout</Nav.Link>
             <Nav.Link onClick={() => navigate('/team')}>Team</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
     <Routes>
-      <Route path="/" element={<Homepage />}></Route>
+    <Route path="/" element={<Landing />}></Route>
+      <Route path="/hangouts" element={<Homepage />}></Route>
         <Route path="/pitch" element={<SubmitHangout/>}></Route>
           <Route path="/team" element={<Team/>}></Route>
       </Routes>

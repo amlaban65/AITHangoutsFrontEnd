@@ -29,16 +29,15 @@ return(
       return (
     <Card className="galleryItem" style={{ width: '24rem'}}>
       <Card.Body>
-        <Card.Title style={{fontWeight: '900', marginBottom: '5%'}}>{hangout.title}</Card.Title>
+        <Card.Title style={{fontSize: '200%', fontWeight: '900', marginBottom: '5%'}}>{hangout.title}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted font-weight-lighter" >Organized by: {hangout.organizer}</Card.Subtitle>
         <br></br>
         <Card.Subtitle className="mb-2 text">Description: {hangout.description}
         </Card.Subtitle>
         <br></br>
         <Card.Subtitle className="mb-2 text-muted">Contact: {hangout.contact}</Card.Subtitle>
         <br></br>
-        <Card.Subtitle className="mb-2 text font-weight-lighter" >Organized by: {hangout.organizer}</Card.Subtitle>
-        <br></br>
-        <Card.Subtitle className="mb-2 text-muted font-weight-lighter">Date pitched: {moment(hangout.date).format("dddd")}, {moment(hangout.date).format("DD/MM/YYYY")}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text font-weight-lighter">Date pitched: {moment(hangout.date).format("dddd")}, {moment(hangout.date).format("DD/MM/YYYY")}</Card.Subtitle>
       </Card.Body>
     </Card>
       )})}

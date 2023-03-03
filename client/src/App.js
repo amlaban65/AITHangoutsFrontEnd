@@ -21,7 +21,7 @@ function App() {
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
         crossorigin="anonymous"
       />
-      <Navbar bg="primary" variant="dark">
+      <Navbar bg="primary" expand="lg" variant="dark">
           <Navbar.Brand onClick={() => navigate('/')} style={{marginLeft: '2%', fontWeight: '800'}}>AIT Hangouts</Navbar.Brand>
           <Container>
           <Nav className="me-auto">

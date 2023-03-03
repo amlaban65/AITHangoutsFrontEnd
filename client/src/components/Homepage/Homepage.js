@@ -6,14 +6,17 @@ import moment from 'moment'
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import LoadingComponent from '../LoadingComponent/LoadingComponent';
 const Homepage = () => {
 const navigate = useNavigate();
 const [data, setData] = useState([]);
-const [loading, setLoading] = useState(true);
+const [loading, setLoading] = useState();
 useEffect(() => {
   const fetchData = async() => {
+    setLoading(true);
   const result = await axios.get("https://aithangouts.onrender.com/hangouts").then((res) => {
     console.log(res)
+    setLoading(false);
     return res.data.data
   });
   result.sort((a, b) => b.date.localeCompare(a.date));
@@ -29,6 +32,9 @@ useEffect(() => {
     setLoading(false);
   }
 }, data);
+if (loading) {
+  return <LoadingComponent/>
+}
 return(
   
   <div className="homepage gallery" style={{margin: '1%'}}>

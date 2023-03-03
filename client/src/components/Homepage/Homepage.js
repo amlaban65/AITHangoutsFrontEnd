@@ -5,12 +5,10 @@ import { format } from 'date-fns'
 import moment from 'moment'
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
-import ReactLoading from 'react-loading';
 import axios from 'axios';
 const Homepage = () => {
 const navigate = useNavigate();
 const [data, setData] = useState([]);
-const [a, setA] = useState([]);
 const [loading, setLoading] = useState(true);
 useEffect(() => {
   const fetchData = async() => {
@@ -34,8 +32,7 @@ useEffect(() => {
 return(
   
   <div className="homepage gallery" style={{margin: '1%'}}>
-    {loading ? <ReactLoading type="spin" height={240} color='#000000' width={100} />
-    : 
+    {
     data?.map((hangout) => {
       return (
     <Card className="galleryItem" style={{ width: '24rem'}}>
@@ -51,8 +48,7 @@ return(
         <Card.Subtitle className="mb-2 text font-weight-lighter">Date pitched: {moment(hangout.date).format("dddd")}, {moment(hangout.date).format("DD/MM/YYYY")}</Card.Subtitle>
       </Card.Body>
     </Card>
-      )}) }
-      
+      )})}
     </div>
 );
 }

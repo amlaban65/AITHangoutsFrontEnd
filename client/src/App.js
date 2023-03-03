@@ -25,7 +25,7 @@ function App() {
           <Container>
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate('/pitch')}>Pitch a hangout!</Nav.Link>
-            <Nav.Link onClick={() => navigate('/pitch')}>Team</Nav.Link>
+            <Nav.Link onClick={() => navigate('/team')}>Team</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

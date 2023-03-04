@@ -26,7 +26,7 @@ useEffect(() => {
 fetchData();
 }, []);
 useEffect(() => {
-  if (data.length == 0) {
+  if (data?.length == 0) {
     setLoading(true);
   } else {
     setLoading(false);

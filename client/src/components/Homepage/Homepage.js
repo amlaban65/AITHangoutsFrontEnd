@@ -19,7 +19,7 @@ useEffect(() => {
     setLoading(false);
     return res.data.data
   });
-  result.sort((a, b) => b.date.localeCompare(a.date));
+  result?.sort((a, b) => b.date.localeCompare(a.date));
   setData(result);
   console.log(data)
 }
@@ -44,14 +44,14 @@ return(
     <Card className="galleryItem" style={{ width: '24rem'}}>
       <Card.Body>
         <Card.Title style={{fontSize: '200%', fontWeight: '900', marginBottom: '5%'}}>{hangout.title}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted font-weight-lighter" >Organized by: {hangout.organizer}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted font-weight-lighter" style={{fontWeight:'650'}}>Organized by: <span style={{fontWeight:'450'}}>{hangout.organizer}</span></Card.Subtitle>
         <br></br>
-        <Card.Subtitle className="mb-2 text">Description: {hangout.description}
+        <Card.Subtitle className="mb-2 text" style={{fontWeight:'650'}}>Description: <span style={{fontWeight:'350'}}>{hangout.description}</span>
         </Card.Subtitle>
         <br></br>
-        <Card.Subtitle className="mb-2 text-muted">Contact: {hangout.contact}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted" style={{fontWeight:'650'}}>Contact: <span style={{fontWeight:'450'}}>{hangout.contact}</span></Card.Subtitle>
         <br></br>
-        <Card.Subtitle className="mb-2 text font-weight-lighter">Date pitched: {moment(hangout.date).format("dddd")}, {moment(hangout.date).format("DD/MM/YYYY")}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text font-weight-lighter" style={{fontWeight:'650'}}>Date pitched: <span style={{fontWeight:'350'}}>{moment(hangout.date).format("dddd")}, {moment(hangout.date).format("DD/MM/YYYY")}</span></Card.Subtitle>
       </Card.Body>
     </Card>
       )})}

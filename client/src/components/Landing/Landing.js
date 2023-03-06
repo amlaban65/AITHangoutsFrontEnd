@@ -24,7 +24,7 @@ const Landing = () =>
              <span className='text-primary'> We can help!</span>
              </h1>
              <p style={{fontWeight:'500', fontSize:'larger'}}>With AIT Hangouts, you can connect with other students looking
-               to organize fun outings! <br></br><br></br>From a crazy night out in Center City to a walk by the Schuylkill River,
+               to organize fun outings! <br></br><br></br>From a crazy night out in downtown Budapest to a walk by the Danube River,
                you will find all kinds of exciting hangouts here.
              </p>
              {jwt ? 

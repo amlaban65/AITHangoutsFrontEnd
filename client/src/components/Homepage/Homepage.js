@@ -28,7 +28,7 @@ if (jwtToken) {
 useEffect(() => {
   const fetchData = setInterval(async() => {
     // setLoading(true);
-  const result = await axios.get("https://phangoutsbackend127.onrender.com/hangouts", {
+  const result = await axios.get("https://aithangouts.onrender.com/hangouts", {
   headers: {
     'Authorization': `Bearer ${jwtToken}`
   }}).then((res) => {
@@ -61,7 +61,7 @@ if (loading) {
 
 const deleteHangout= async (id) => {
   if (window.confirm("Are you sure you want to delete this hangout?")) {
-    await axios.delete(`https://phangoutsbackend127.onrender.com/hangout/${id}/${user_id}`, {
+    await axios.delete(`https://aithangouts.onrender.com/hangout/${id}/${user_id}`, {
       headers: {
         'Authorization': `Bearer ${jwtToken}`
       }}).then((res) => {
@@ -76,7 +76,7 @@ const deleteHangout= async (id) => {
 };
 
 const likeHangout = async (id) => {
-  await axios.patch(`https://phangoutsbackend127.onrender.com/likeHangout/${id}/${user_id}`).then((res) => {
+  await axios.patch(`https://aithangouts.onrender.com/likeHangout/${id}/${user_id}`).then((res) => {
       setLoading(false);
       return res.data.data
     }).catch((err) => {
@@ -84,7 +84,7 @@ const likeHangout = async (id) => {
     });
 };
 const unlikeHangout = async (id) => {
-  await axios.patch(`https://phangoutsbackend127.onrender.com/unlikeHangout/${id}/${user_id}`).then((res) => {
+  await axios.patch(`https://aithangouts.onrender.com/unlikeHangout/${id}/${user_id}`).then((res) => {
       setLoading(false);
       return res.data.data
     }).catch((err) => {

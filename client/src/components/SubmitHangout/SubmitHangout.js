@@ -19,7 +19,7 @@ const SubmitHangout = () => {
       return;
     }
     try {
-      let res = await axios.post("https://phangoutsbackend127.onrender.com/hangout/", {
+      let res = await axios.post("https://aithangouts.onrender.com/hangout/", {
         title: title,
         description: description,
         organizer: organizer,

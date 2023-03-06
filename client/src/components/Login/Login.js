@@ -21,7 +21,7 @@ const Login = () => {
       setMessage("Please enter your password");
       return;
     }
-    const result = await axios.post("https://phangoutsbackend127.onrender.com/login", 
+    const result = await axios.post("https://aithangouts.onrender.com/login", 
     {email: email, password: password}).then((res) => {
       localStorage.setItem('token', res.data.token);
       navigate('/hangouts');

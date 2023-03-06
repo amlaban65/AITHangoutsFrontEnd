@@ -1,3 +1,14 @@
 .me-auto {
     font-weight: 700;
 }
+.rightNavLinks {
+    font-weight: 900;
+}
+.light {
+    color: white !important;
+}
+.navigationSpace {
+    white-space: nowrap;
+    font-weight: 700 !important;
+    margin-left: 2.7%;
+}

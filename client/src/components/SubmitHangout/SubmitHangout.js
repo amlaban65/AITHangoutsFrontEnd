@@ -3,7 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import styles from './SubmitHangout.css';
 import { useNavigate } from 'react-router-dom';
-
+import jwt_decode from 'jwt-decode';
 
 const SubmitHangout = () => {
   const [title, setTitle] = useState("");
@@ -14,18 +14,21 @@ const SubmitHangout = () => {
   const navigate = useNavigate();
   let handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('here')
     if (!title || !description || !organizer || !contact) {
       setMessage("Please fill out all the fields!");
       return;
     }
     try {
-      let res = await axios.post("https://aithangouts.onrender.com/hangout/", {
+      let res = await axios.post("https://phangoutsbackend127.onrender.com/hangout/", {
         title: title,
         description: description,
         organizer: organizer,
-        contact: contact
-      })
+        contact: contact,
+        user_id: user_id
+      }, {
+        headers: {
+          'Authorization': `Bearer ${jwtToken}`
+        }})
       if (res.status === 201) {
         setTitle("");
         setDescription("");
@@ -38,32 +41,50 @@ const SubmitHangout = () => {
       }
     } catch (err) {
       console.log(err);
+      if (err.response.status == 401) {
+        localStorage.removeItem('token');
+        navigate('/login')
+        return;
+    }
     }
   };
+  const jwtToken = localStorage.getItem('token');
+  let user_id;
+  if (jwtToken) {
+    const decodedToken = jwt_decode(jwtToken);
+    user_id = decodedToken.user_id;
+  }
   return (
+    <>
+    {!jwtToken ? <div className='loggedOut'>
+      You must be logged in to pitch a hangout</div> :
   <div className={styles.SubmitHangout} style={{margin: '1%'}}>
        <form onSubmit={handleSubmit}>
   <div class="form-group">
     <label for="exampleFormControlInput1">Event name</label>
     <input type="text" value={title}
-     onChange={(e) => setTitle(e.target.value)} class="form-control" id="exampleFormControlInput1" placeholder="What's cookin' good lookin'?"/>
+    maxLength={45}
+     onChange={(e) => setTitle(e.target.value)} class="form-control" id="exampleFormControlInput1" placeholder="What's cookin', good lookin'?"/>
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Description</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
     value={description}
+    maxLength={150}
     onChange={(e) => setDescription(e.target.value)}
     placeholder="What's going down? Make sure to include time, location, etc.."></textarea>
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Organizer</label>
     <input value={organizer}
+    maxLength={25}
      onChange={(e) => setOrganizer(e.target.value)}
     type="text" class="form-control" id="exampleFormControlInput1" placeholder="Who came up with this?"/>
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Contact</label>
     <input type="text"
+    maxLength={25}
     value={contact} 
     onChange={(e) => setContact(e.target.value)}
     class="form-control" id="exampleFormControlInput1" placeholder="Email, phone number, or IG handle is fine"/>
@@ -72,6 +93,8 @@ const SubmitHangout = () => {
   <div className="message">{message ? <p>{message}</p> : null}</div>
 </form>
   </div>
+    }
+    </>
   );
 }
 

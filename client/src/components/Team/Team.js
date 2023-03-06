@@ -15,8 +15,7 @@ const Team = () => (
         <Card.Subtitle className="sub mb-2 text-muted">Founder, gym bro, and hangout expert</Card.Subtitle>
         <Card.Text>
           I am a junior at the University of Pennsylvania studying Computer Science.
-          I am studying at AIT during Spring 2023. I built this website after realizing that
-          AIT does not have a centralized place where we can share plans.
+          I built this website to help other AIT students make new friends! Hope this helps bring our community closer together.
         </Card.Text>
         <Container>
         <Button href='https://www.instagram.com/ahmed.laban127/' variant="primary">Instagram</Button>

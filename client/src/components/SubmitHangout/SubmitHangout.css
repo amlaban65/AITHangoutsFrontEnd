@@ -9,5 +9,11 @@
 .message {
     font-size: 1.2em;
     text-align: center;
-    color: #36a936;
-  }
+    color: #ff0000;
+}
+.loggedOut {
+    font-size: 1.2em;
+    color: #ff0000;
+    text-align: center;
+    margin-top: 2%;
+}

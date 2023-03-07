@@ -50,10 +50,10 @@ function App() {
             <Nav className="me-auto">
               {!jwtToken ? null :
               <>
-            <Nav.Link onClick={() => navigate('/hangouts')}>Hangouts</Nav.Link>
               <Nav.Link onClick={() => navigate('/pitch')}>Pitch a hangout</Nav.Link>
               <Nav.Link onClick={() => navigate('/myhangouts')}>My Hangouts</Nav.Link>           
               </>}
+              <Nav.Link onClick={() => navigate('/hangouts')}>Hangouts</Nav.Link>
               <Nav.Link onClick={() => navigate('/team')}>Team</Nav.Link>
             </Nav>
           </Container>

@@ -114,12 +114,17 @@ data?.map((hangout) => {
    <Card.Subtitle className="mb-2 text font-weight-lighter" style={{fontWeight:'650'}}>Date pitched: <span style={{fontWeight:'350'}}>{moment(hangout.date).format("dddd")}, {moment(hangout.date).format("MM/DD/YYYY")}</span></Card.Subtitle>
  </Card.Body>
  {user_id === 'invalid' ? <></> :
- hangout.favorites?.includes((user_id)) ? <FontAwesomeIcon className="utilIcon" icon={farHeart} size='lg' 
+ hangout.favorites?.includes((user_id)) ?
+ <>
+  <FontAwesomeIcon className="utilIcon" icon={farHeart} size='lg' 
  onClick={() => unlikeHangout(hangout._id)}/>
- : <FontAwesomeIcon className="utilIcon" icon={faHeart} size='lg' onClick={() => likeHangout(hangout._id)}/>
-}
  <div style={{textAlign:'center', fontWeight: '700'}}>{hangout.favorites?.length}</div>
-       </Card>
+ </>
+ : <>
+ <FontAwesomeIcon className="utilIcon" icon={faHeart} size='lg' onClick={() => likeHangout(hangout._id)}/>
+ <div style={{textAlign:'center', fontWeight: '700'}}>{hangout.favorites?.length}</div>
+</>
+}       </Card>
  )})}
 </div>
 );

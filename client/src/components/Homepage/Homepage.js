@@ -90,40 +90,41 @@ const unlikeHangout = async (id) => {
       console.log(err)
     });
 };
-return(
-  data?.map((hangout) => {
-  <div className="homepage gallery" style={{margin: '1%'}}>
-    <Card className="galleryItem" style={{ width: '24rem'}}>
-      <Card.Body>
-        {user_id === hangout.user_id ? <div style={{display:'flex', justifyContent:'space-between'}}>
-          <Card.Title className='text-truncate text-wrap' style={{fontSize: '200%', fontWeight: '900', marginBottom: '5%'}}>{hangout.title}</Card.Title>
-          <FontAwesomeIcon onClick={() => deleteHangout(hangout._id)}
-          className="utilIcon" icon={faTrash} size='lg' />
-          </div>: 
-        <Card.Title className='text-truncate text-wrap'
-         style={{fontSize: '200%', fontWeight: '900', marginBottom: '5%'}}>{hangout.title}</Card.Title> }
-        <Card.Subtitle className="mb-2 text-muted font-weight-lighter" style={{fontWeight:'650'}}>Organized by: <span style={{fontWeight:'450'}}>{hangout.organizer}</span></Card.Subtitle>
-        <br></br>
-        <Card.Subtitle className="mb-2 text" style={{fontWeight:'650'}}>Description: <span style={{fontWeight:'350'}}>{hangout.description}</span>
-        </Card.Subtitle>
-        <br></br>
-        <Card.Subtitle className="mb-2 text-muted" style={{fontWeight:'650'}}>Contact: <span style={{fontWeight:'450'}}>{hangout.contact}</span></Card.Subtitle>
-        <br></br>
-        <Card.Subtitle className="mb-2 text font-weight-lighter" style={{fontWeight:'650'}}>Date pitched: <span style={{fontWeight:'350'}}>{moment(hangout.date).format("dddd")}, {moment(hangout.date).format("MM/DD/YYYY")}</span></Card.Subtitle>
-      </Card.Body>
-      {user_id === "invalid" ? <></> :
-      hangout.favorites?.includes((user_id)) ? <FontAwesomeIcon className="utilIcon" icon={farHeart} size='lg' 
-      onClick={() => unlikeHangout(hangout._id)}/>
-      : <FontAwesomeIcon className="utilIcon" icon={faHeart} size='lg' onClick={() => likeHangout(hangout._id)}/>
-    }
-      <div style={{textAlign:'center', fontWeight: '700'}}>{hangout.favorites?.length}</div>
-            </Card>
-      ))
-    </div>
-    }
-  )
-)
-  }
+  return (
+<div className="homepage gallery" style={{margin: '1%'}}>
+  {
+data?.map((hangout) => {
+ return (
+<Card className="galleryItem" style={{ width: '24rem'}}>
+ <Card.Body>
+   {user_id === hangout.user_id ? <div style={{display:'flex', justifyContent:'space-between'}}>
+     <Card.Title className='text-truncate text-wrap'
+     style={{fontSize: '200%', fontWeight: '900', marginBottom: '5%'}}>{hangout.title}</Card.Title>
+     <FontAwesomeIcon onClick={() => deleteHangout(hangout._id)}
+     className="utilIcon" icon={faTrash} size='lg' />
+     </div>: 
+   <Card.Title className='text-truncate text-wrap' style={{fontSize: '200%', fontWeight: '900', marginBottom: '5%'}}>{hangout.title}</Card.Title> }
+   <Card.Subtitle className="mb-2 text-muted font-weight-lighter" style={{fontWeight:'650'}}>Organized by: <span style={{fontWeight:'450'}}>{hangout.organizer}</span></Card.Subtitle>
+   <br></br>
+   <Card.Subtitle className="mb-2 text" style={{fontWeight:'650'}}>Description: <span style={{fontWeight:'350'}}>{hangout.description}</span>
+   </Card.Subtitle>
+   <br></br>
+   <Card.Subtitle className="mb-2 text-muted" style={{fontWeight:'650'}}>Contact: <span style={{fontWeight:'450'}}>{hangout.contact}</span></Card.Subtitle>
+   <br></br>
+   <Card.Subtitle className="mb-2 text font-weight-lighter" style={{fontWeight:'650'}}>Date pitched: <span style={{fontWeight:'350'}}>{moment(hangout.date).format("dddd")}, {moment(hangout.date).format("MM/DD/YYYY")}</span></Card.Subtitle>
+ </Card.Body>
+ {user_id === 'invalid' ? <></> :
+ hangout.favorites?.includes((user_id)) ? <FontAwesomeIcon className="utilIcon" icon={farHeart} size='lg' 
+ onClick={() => unlikeHangout(hangout._id)}/>
+ : <FontAwesomeIcon className="utilIcon" icon={faHeart} size='lg' onClick={() => likeHangout(hangout._id)}/>
+}
+ <div style={{textAlign:'center', fontWeight: '700'}}>{hangout.favorites?.length}</div>
+       </Card>
+ )})}
+</div>
+);
+}
+
 
 Homepage.propTypes = {};
 

@@ -25,7 +25,7 @@ if (jwtToken) {
   const decodedToken = jwt_decode(jwtToken);
   user_id = decodedToken.user_id;
 } else {
-  user_id = 0000;
+  user_id = "xx";
 }
 useEffect(() => {
   const fetchData = setInterval(async() => {
@@ -76,7 +76,6 @@ const deleteHangout= async (id) => {
     return;
   }
 };
-
 const likeHangout = async (id) => {
   await axios.patch(`https://aithangouts.onrender.com/likeHangout/${id}/${user_id}`).then((res) => {
       setLoading(false);
@@ -114,7 +113,7 @@ return(
         <br></br>
         <Card.Subtitle className="mb-2 text font-weight-lighter" style={{fontWeight:'650'}}>Date pitched: <span style={{fontWeight:'350'}}>{moment(hangout.date).format("dddd")}, {moment(hangout.date).format("MM/DD/YYYY")}</span></Card.Subtitle>
       </Card.Body>
-      {user_id === 0000 ? null :
+      {user_id === "xx" ? null :
       hangout.favorites?.includes((user_id)) ? <FontAwesomeIcon className="utilIcon" icon={farHeart} size='lg' 
       onClick={() => unlikeHangout(hangout._id)}/>
       : <FontAwesomeIcon className="utilIcon" icon={faHeart} size='lg' onClick={() => likeHangout(hangout._id)}/>

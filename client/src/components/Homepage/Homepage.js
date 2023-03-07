@@ -30,10 +30,7 @@ if (jwtToken) {
 useEffect(() => {
   const fetchData = setInterval(async() => {
     // setLoading(true);
-  const result = await axios.get("https://aithangouts.onrender.com/hangouts", {
-  headers: {
-    'Authorization': `Bearer ${jwtToken}`
-  }}).then((res) => {
+  const result = await axios.get("https://aithangouts.onrender.com/hangouts").then((res) => {
     // setLoading(false);
     return res.data.data
   }).catch((err) => {

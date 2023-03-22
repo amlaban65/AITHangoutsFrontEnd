@@ -107,9 +107,8 @@ const Landing = () =>
             <h1 class="text-5xl md:text-6xl xl:text-6xl font-bold tracking-tight mb-12 py-4">Looking to make new friends? <br /><span class="text-blue-600">We can help</span></h1>
             <p class="text-gray-500 text-2xl">With AIT Hangouts, you can connect with other students looking
                 to organize fun outings! <br></br></p>
-            <a class="inline-block px-7 py-3 mr-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out landingBtn" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Get started</a>
-            <a class="inline-block px-7 py-3 mr-2 bg-teal-400 text text-black text-500 font-medium text-sm leading-snug uppercase rounded shadow-md mt-2 border border-blue-400 hover:bg-white-700 hover:shadow-lg focus:bg-white-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out landingBtn" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Browse hangouts</a>
-
+            <a class="inline-block px-7 py-3 mr-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out landingBtn" data-mdb-ripple="true" data-mdb-ripple-color="light" href="/register" role="button">Get started</a>
+            <a class="inline-block px-7 py-3 mr-2 bg-teal-400 text text-black text-500 font-medium text-sm leading-snug uppercase rounded shadow-md mt-2 border border-blue-400 hover:bg-white-700 hover:shadow-lg focus:bg-white-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out landingBtn" data-mdb-ripple="true" data-mdb-ripple-color="light" href="/hangouts" role="button">Browse hangouts</a>
           </div>
           <div class="lg:mb-0 d-flex justify-content-center">
             <img
@@ -176,8 +175,8 @@ const Landing = () =>
             <p class="text-gray-500 text-2xl">
             Still not convinced? Check what other students have been up to by clicking on "Browse Hangouts!"
           </p>
-            <a class="inline-block px-7 py-3 mr-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out landingBtn" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Sign up</a>
-            <a class="inline-block px-7 py-3 mr-2 bg-teal-400 text text-black text-500 font-medium text-sm leading-snug uppercase rounded shadow-md mt-2 border border-blue-400 hover:bg-white-700 hover:shadow-lg focus:bg-white-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out landingBtn" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Browse hangouts</a>
+            <a class="inline-block px-7 py-3 mr-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out landingBtn" data-mdb-ripple="true" data-mdb-ripple-color="light" href="/register" role="button">Sign up</a>
+            <a class="inline-block px-7 py-3 mr-2 bg-teal-400 text text-black text-500 font-medium text-sm leading-snug uppercase rounded shadow-md mt-2 border border-blue-400 hover:bg-white-700 hover:shadow-lg focus:bg-white-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out landingBtn" data-mdb-ripple="true" data-mdb-ripple-color="light" href="/hangouts" role="button">Browse hangouts</a>
           </div>
           <div class="lg:mb-0 d-flex d-flex justify-content-center">
             <img

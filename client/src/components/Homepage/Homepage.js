@@ -113,7 +113,10 @@ data?.map((hangout) => {
    <br></br>
    <Card.Subtitle className="mb-2 text font-weight-lighter" style={{fontWeight:'650'}}>Date pitched: <span style={{fontWeight:'350'}}>{moment(hangout.date).format("dddd")}, {moment(hangout.date).format("MM/DD/YYYY")}</span></Card.Subtitle>
  </Card.Body>
- {user_id === 'invalid' ? <></> :
+ {user_id === 'invalid' ? <>
+ <FontAwesomeIcon className="utilIcon" icon={faHeart} size='lg' onClick={() => navigate('/login')}/>
+ <div style={{textAlign:'center', fontWeight: '700'}}>{hangout.favorites?.length}</div>
+</> :
  hangout.favorites?.includes((user_id)) ?
  <>
   <FontAwesomeIcon className="utilIcon" icon={farHeart} size='lg' 

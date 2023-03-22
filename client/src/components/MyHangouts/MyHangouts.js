@@ -28,7 +28,7 @@ const MyHangouts = () => {
   useEffect(() => {
     const fetchData = setInterval(async() => {
       // setLoading(true);
-    const result =await axios.get(`https://aithangouts.onrender.com/myhangouts/${user_id}`, {
+    const result =await axios.get(`https://aithangouts-qir7.onrender.com/myhangouts/${user_id}`, {
     headers: {
       'Authorization': `Bearer ${jwtToken}`
     }}).then((res) => {
@@ -63,7 +63,7 @@ const MyHangouts = () => {
 
   const deleteHangout= async (id) => {
     if (window.confirm("Are you sure you want to delete this hangout?")) {
-      await axios.delete(`https://aithangouts.onrender.com/hangout/${id}/${user_id}`, {
+      await axios.delete(`https://aithangouts-qir7.onrender.com/hangout/${id}/${user_id}`, {
         headers: {
           'Authorization': `Bearer ${jwtToken}`
         }}).then((res) => {
@@ -78,7 +78,7 @@ const MyHangouts = () => {
   };
   
   const likeHangout = async (id) => {
-    await axios.patch(`https://aithangouts.onrender.com/likeHangout/${id}/${user_id}`).then((res) => {
+    await axios.patch(`https://aithangouts-qir7.onrender.com/likeHangout/${id}/${user_id}`).then((res) => {
         setLoading(false);
         return res.data.data
       }).catch((err) => {
@@ -86,7 +86,7 @@ const MyHangouts = () => {
       });
   };
   const unlikeHangout = async (id) => {
-    await axios.patch(`https://aithangouts.onrender.com/unlikeHangout/${id}/${user_id}`).then((res) => {
+    await axios.patch(`https://aithangouts-qir7.onrender.com/unlikeHangout/${id}/${user_id}`).then((res) => {
         setLoading(false);
         return res.data.data
       }).catch((err) => {

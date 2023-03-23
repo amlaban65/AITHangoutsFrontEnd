@@ -5,10 +5,13 @@ import { MDBFooter } from 'mdb-react-ui-kit';
 
 
 const Footer = () => (
-  <MDBFooter bgColor='light' className='text-center text-lg-start text-muted' style={{marginTop:'12%'}}>
-  <div className='text-center p-4 bg-light'>
-    Made with ❤ by Ahmed Laban, UPenn Class of '24</div>
-  </MDBFooter>
+  <>
+<footer  style={{display:'flex', justifyContent:'center', textAlign:'center'}} class="bottom-0 left-0 z-20 w-full p-2 bg-white-100 items-center justify-between p-6">
+    <div style={{display:'flex', justifyContent:'center', textAlign:'center'}} class="text-sm text-gray-700 text-bold text-center dark:text-gray-600">Made with ♡ by Ahmed Laban, UPenn '24
+    </div>
+        </footer>
+        </>
+
 );
 
 Footer.propTypes = {};

@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,16 +10,18 @@ import Homepage from './components/Homepage/Homepage';
 import Team from './components/Team/Team';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import Footer from './components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SubmitHangout from './components/SubmitHangout/SubmitHangout';
 import MyHangouts from './components/MyHangouts/MyHangouts';
 import Landing from './components/Landing/Landing';
 import jwt_decode from 'jwt-decode';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
-
+import { Location } from 'react-router-dom';
 function App() {
   const navigate = useNavigate();
   const jwtToken = localStorage.getItem('token');
+  const location = useLocation();
   let name;
   if (jwtToken) {
     const decodedToken = jwt_decode(jwtToken);
@@ -81,6 +83,8 @@ function App() {
       <Route path="/register" element={<Register/>}></Route>
       <Route path="/myhangouts" element={<MyHangouts/>}></Route>
     </Routes>
+    {location.pathname !== '/team' && <Footer /> && location.pathname !== '/myhangouts' && <Footer /> }
+
     </div>
 
   );
